@@ -14,11 +14,14 @@ DNS = Site adresini IP adresine çevirir, rehber gibidir.
 
 ```sudo apt remove``` komutu programı kaldırır. 
 
-```Sudo apt upgrade 
+```
+Sudo apt upgrade 
 Sudo apt update
 Sudo apt list —upgradable 
 Sudo apt remove 
-Sudo apt purge ```
+Sudo apt purge
+```
+
 
 ```sudo apt purge```  komutu bilgisayarda o programla ilgili olan o zamana kadar ne yapıldıysa her şeyi kaldırır. Veritabanlarını , dataları tamamen siler.
 
