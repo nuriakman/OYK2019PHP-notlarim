@@ -1,4 +1,6 @@
 # OYK2019PHP
+![özgür yazılım yaz kampı](https://kamp.linux.org.tr/2019/yaz/wp-content/themes/oyk-wp-theme/assets/images/oyk2019logo.png)
+
 
 #### Özgür yazılım yaz kampı Php sınıfında kendi aldığım ders notları
 
@@ -25,6 +27,5 @@ Sudo apt purge
 
 ```sudo apt purge```  komutu bilgisayarda o programla ilgili olan o zamana kadar ne yapıldıysa her şeyi kaldırır. Veritabanlarını , dataları tamamen siler.
 
-Githuba fotoğraf ekleme = ![özgür yazılım yaz kampı](https://kamp.linux.org.tr/2019/yaz/wp-content/themes/oyk-wp-theme/assets/images/oyk2019logo.png)
 
 
