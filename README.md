@@ -39,7 +39,9 @@ GitHub'ta yeni bi repo oluşturduğun zaman adresini kopyaladığında terminald
 ```sudo apt purge```  komutu bilgisayarda o programla ilgili olan o zamana kadar ne yapıldıysa her şeyi kaldırır. Veritabanlarını , dataları tamamen siler.
 
 
-``` ssh-keygen``` komutu ssh fingerprint verir. Terminalde ```cat ~/.ssh/id_rsa.pub ```komutu çalıştırdıktan sonra gelen key değerini GitHub'ta new ssh key kısmına ekleyerek hesap eşleme yapabilirsin.Key değerini yapıştırdıktan sonra
+``` ssh-keygen``` komutu ssh fingerprint verir. 
+
+Terminalde ```cat ~/.ssh/id_rsa.pub ```komutu çalıştırdıktan sonra gelen key değerini GitHub'ta new ssh key kısmına ekleyerek hesap eşleme yapabilirsin.Key değerini yapıştırdıktan sonra
 
 ```git config —global “user.email”```
 ```git config —global “user.name” ``` komutlarını çalıştırıp işlem tamamlanır.
