@@ -24,8 +24,41 @@ Sudo apt remove
 Sudo apt purge
 ```
 
+GitHub'ta yeni bi repo oluşturduğun zaman adresini kopyaladığında terminalde ```git clone``` komutuna yapıştırdığında projeyi bilgisayara alır.
+
+```git add dosyanınadi``` 
+
+```git commit -m “açıklama”```
+
+```git status``` yazınca hangi dosyada değişiklik yapıldığını gösterir
+
+```git add``` o değişiklik yapılan dosyayı günceller
+
+```git push``` pushlamaya yarar
 
 ```sudo apt purge```  komutu bilgisayarda o programla ilgili olan o zamana kadar ne yapıldıysa her şeyi kaldırır. Veritabanlarını , dataları tamamen siler.
+
+
+``` ssh-keygen``` komutu ssh fingerprint verir. Terminalde ```cat ~/.ssh/id_rsa.pub ```komutu çalıştırdıktan sonra gelen key değerini GitHub'ta new ssh key kısmına ekleyerek hesap eşleme yapabilirsin.Key değerini yapıştırdıktan sonra
+
+```git config —global “user.email”```
+```git config —global “user.name” ``` komutlarını çalıştırıp işlem tamamlanır.
+
+Push yaparken sistem Gitignore klasörünün altındaki dosyaları ignore eder. Projeye dahil etmez.
+
+.gitignore klasörü projenin root klasöründe olmalı. Ignore etmek istediğin dosyanın pathi yazarsın.
+
+```<pre> ``` tagleri ile satır ve sütunları daha düzgün gösterir. Genelde ```sprintf```  ile yazılır.
+
+Linuxta ```halt``` veya ``` sudo shutdown now ```komutu bilgisayarı kapatır.
+```sudo shutdown -r ```komutu restart ettirir. Zaman verebilirsin.
+
+form select içerisinde ```autocomplete=“off”``` daha önce yazdığım inputlar gözükmez.
+```<input type=“” required>``` yazarsan php devreye girmeden html inputları kontrol eder.
+
+
+
+
 
 
 
