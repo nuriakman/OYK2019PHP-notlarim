@@ -14,19 +14,19 @@ DNS = Site adresini IP adresine çevirir, rehber gibidir.
 
 ```sudo apt purge``` komutu bilgisayarda o programla ilgili olan o zamana kadar ne yapıldıysa her şeyi kaldırır. Veritabanlarını , dataları tamamen siler.
 
-```sudo apt remove``` komutu programı kaldırır. 
+```sudo apt remove``` komutu programı kaldırır.
 
 ```
-Sudo apt upgrade 
+Sudo apt upgrade
 Sudo apt update
-Sudo apt list —upgradable 
-Sudo apt remove 
+Sudo apt list —upgradable
+Sudo apt remove
 Sudo apt purge
 ```
 
 GitHub'ta yeni bi repo oluşturduğun zaman adresini kopyaladığında terminalde ```git clone``` komutuna yapıştırdığında projeyi bilgisayara alır.
 
-```git add dosyanınadi``` 
+```git add dosyanınadi```
 
 ```git commit -m “açıklama”```
 
@@ -39,7 +39,7 @@ GitHub'ta yeni bi repo oluşturduğun zaman adresini kopyaladığında terminald
 ```sudo apt purge```  komutu bilgisayarda o programla ilgili olan o zamana kadar ne yapıldıysa her şeyi kaldırır. Veritabanlarını , dataları tamamen siler.
 
 
-``` ssh-keygen``` komutu ssh fingerprint verir. 
+``` ssh-keygen``` komutu ssh fingerprint verir.
 
 Terminalde ```cat ~/.ssh/id_rsa.pub ```komutu çalıştırdıktan sonra gelen key değerini GitHub'ta new ssh key kısmına ekleyerek hesap eşleme yapabilirsin.Key değerini yapıştırdıktan sonra
 
@@ -58,9 +58,50 @@ Linuxta ```halt``` veya ``` sudo shutdown now ```komutu bilgisayarı kapatır.
 form select içerisinde ```autocomplete=“off”``` daha önce yazdığım inputlar gözükmez.
 ```<input type=“” required>``` yazarsan php devreye girmeden html inputları kontrol eder.
 
+- SQL Komutlarının Bazıları
+
+--LIKE % kullanımı içerisinde "an" ifadesi geçen bütün şehirleri listeler.
+ ```SELECT * FROM sehirler WHERE sehir_adi LIKE %an% ```
+
+-- Hatırlamadığın harfleri için _ karakteri kullanabilirsin.
+ ```SELECT * FROM sehirler WHERE sehir_adi LIKE %an__a% ```
+
+
+-- DISTINCT dediğimiz için arabalar tablosunda yakit sütunundaki her yakıt türünden birer tane seçerek gösterir.
+
+``` SQL
+SELECT DISTINCT yakit FROM arabalar
+```
+
+-- GROUP BY diyerek sıraladığımız zaman aynı veritabanında tekrar eden satırları bize göstermez.
+``` SQL
+SELECT kelime1, kelime2
+FROM esanlam
+GROUP BY kelime1, kelime2
+```
+-- Bu veritabanında tekrar eden satırları bulmak için yazdığımız kod
+``` SQL
+SELECT kelime1, kelime2
+FROM esanlam
+GROUP BY kelime1, kelime2
+COUNT(*) > 1
+```
+-- Çift olan kayıtların bilgisinin çekilmesi max(id) ya da min(id) bakarak seçilebilir.
+``` SQL
+SELECT MAX(id) as id
+FROM esanlam
+GROUP BY kelime1, kelime2
+COUNT(*) > 1
+```
 
 
 
-
-
-
+-- Çift kayıtların silinmesi
+``` SQL
+DELETE FROM esanlam
+WHERE id IN(
+SELECT * FROM (
+SELECT MAX(id) AS id FROM esanlam
+GROUP BY kelime1, kelime2
+HAVING COUNT(*) > 1 )
+AS SILINECEKLER )```
