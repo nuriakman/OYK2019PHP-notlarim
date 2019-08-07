@@ -1,24 +1,31 @@
 # MySQL ve PHP Notları
 
 ## SQL Komutlarının Bazıları
-### Veritabanına yeni bir satır eklemek için ```INSERT INTO```komutunu kullanılır.Örnekte telefon_kodları tablosunda sehir_adı ve telefon_kodu sütununa şehir adı sütununa ankara ve telefon kodu sütununa 312 değerlerini ekler.
+### Veritabanına yeni bir satır eklemek için `INSERT INTO` komutunu kullanılır.
+Örnekte telefon_kodları tablosunda sehir_adı ve telefon_kodu sütununa şehir adı sütununa ankara ve telefon kodu sütununa 312 değerlerini ekler.
 
 ```SQL
 INSERT INTO telefon_kodlari (sehir_adi, telefon_kodu) VALUES ('ankara', '312')
 ```
-
-###Veritabanından bir silme işlemi yapmak için ```DELETE```komutu kullanılır.Örnekte ID numarası 83 olan satırı telefon_kodlari tablosundan siler.
+veya
 ```SQL
-DELETE FROM telefon_kodlari WHERE ((id=83))
+INSERT INTO telefon_kodlari SET sehir_adi='Ankara', telefon_kodu='312'
 ```
 
-###LIKE % kullanımı
+
+### Veritabanından silme işlemi yapmak için `DELETE` komutu kullanılır.
+Örnekte ID numarası 83 olan satırı telefon_kodlari tablosundan siler.
+```SQL
+DELETE FROM telefon_kodlari WHERE id=83
+```
+
+### LIKE % kullanımı
 İçerisinde "an" ifadesi geçen bütün şehirleri listeler.
  ```SQL
  SELECT * FROM sehirler WHERE sehir_adi LIKE '%an%'
  ```
 
-### Hatırlamadığın harfleri için _ karakteri kullanabilirsin.
+### Hatırlamadığınız harfler için _ karakteri (Joker) kullanılabilir
  ```SQL
  SELECT * FROM sehirler WHERE sehir_adi LIKE '%an__a%'
  ```
