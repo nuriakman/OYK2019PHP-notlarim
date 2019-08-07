@@ -1,63 +1,64 @@
-# Mysql ve PHP Notları
+# MySQL ve PHP Notları
 
 ## SQL Komutlarının Bazıları
--- Veritabanına yeni bir satır eklemek için ```INSERT INTO```komutunu kullanılır.Örnekte telefon_kodları tablosunda sehir_adı ve telefon_kodu sütununa şehir adı sütununa ankara ve telefon kodu sütununa 312 değerlerini ekler.
+### Veritabanına yeni bir satır eklemek için ```INSERT INTO```komutunu kullanılır.Örnekte telefon_kodları tablosunda sehir_adı ve telefon_kodu sütununa şehir adı sütununa ankara ve telefon kodu sütununa 312 değerlerini ekler.
 
 ```SQL
-INSERT INTO ‘telefon_kodlari’ (‘sehir_adi’, ‘telefon_kodu’) VALUES (‘ankara’, ‘312’)
+INSERT INTO telefon_kodlari (sehir_adi, telefon_kodu) VALUES ('ankara', '312')
 ```
 
-
---Veritabanından bir silme işlemi yapmak için ```DELETE```komutu kullanılır.Örnekte ID numarası 83 olan satırı telefon_kodlari tablosundan siler.
+###Veritabanından bir silme işlemi yapmak için ```DELETE```komutu kullanılır.Örnekte ID numarası 83 olan satırı telefon_kodlari tablosundan siler.
 ```SQL
-DELETE FROM ‘telefon_kodlari’ WHERE ((‘id’=’83’))
+DELETE FROM telefon_kodlari WHERE ((id=83))
 ```
 
---LIKE % kullanımı
+###LIKE % kullanımı
 İçerisinde "an" ifadesi geçen bütün şehirleri listeler.
  ```SQL
- SELECT * FROM sehirler WHERE sehir_adi LIKE %an%
+ SELECT * FROM sehirler WHERE sehir_adi LIKE '%an%'
  ```
 
--- Hatırlamadığın harfleri için _ karakteri kullanabilirsin.
+### Hatırlamadığın harfleri için _ karakteri kullanabilirsin.
  ```SQL
- SELECT * FROM sehirler WHERE sehir_adi LIKE %an__a%
+ SELECT * FROM sehirler WHERE sehir_adi LIKE '%an__a%'
  ```
 
--- DISTINCT dediğimiz için arabalar tablosunda yakit sütunundaki her yakıt türünden birer tane seçerek gösterir.
+### DISTINCT dediğimiz için arabalar tablosunda yakit sütunundaki her yakıt türünden birer tane seçerek gösterir.
 
-``` SQL
+```SQL
 SELECT DISTINCT yakit FROM arabalar
 ```
 
--- GROUP BY diyerek sıraladığımız zaman aynı veritabanında tekrar eden satırları bize göstermez.
-``` SQL
+### GROUP BY diyerek sıraladığımız zaman aynı veritabanında tekrar eden satırları bize göstermez.
+```SQL
 SELECT kelime1, kelime2
 FROM esanlam
 GROUP BY kelime1, kelime2
 ```
--- Veritabanında tekrar eden satırları bulmak için ```COUNT(*)>1``` kullanılır.
-Örnek olarak
-``` SQL
+
+### Veritabanında tekrar eden satırları bulmak için `COUNT(*)>1` kullanılır.
+```SQL
 SELECT kelime1, kelime2
 FROM esanlam
 GROUP BY kelime1, kelime2
-COUNT(*) > 1
+HAVING COUNT(*) > 1
 ```
--- Çift olan kayıtların bilgisinin çekilmesi max(id) ya da min(id) bakarak seçilebilir.
-``` SQL
+
+### Çift olan kayıtların bilgisinin çekilmesi max(id) ya da min(id) bakarak seçilebilir.
+```SQL
 SELECT MAX(id) as id
 FROM esanlam
 GROUP BY kelime1, kelime2
-COUNT(*) > 1
+HAVING COUNT(*) > 1
 ```
--- Çift kayıtların silinmesi
-``` SQL
+
+### Çift kayıtların silinmesi
+```SQL
 DELETE FROM esanlam
-WHERE id IN(
-SELECT * FROM (
-SELECT MAX(id) AS id FROM esanlam
-GROUP BY kelime1, kelime2
-HAVING COUNT(*) > 1 )
-AS SILINECEKLER )
+ WHERE id IN(
+   SELECT * FROM (
+    SELECT MAX(id) AS id FROM esanlam
+    GROUP BY kelime1, kelime2
+    HAVING COUNT(*) > 1 )
+   AS SILINECEKLER )
 ```
