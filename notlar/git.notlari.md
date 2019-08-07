@@ -42,11 +42,13 @@ Terminalde ```cat ~/.ssh/id_rsa.pub ```komutu çalıştırdıktan sonra gelen ke
 ## Forklanan Bir Projeyi Güncel Tutmak
 
 - GitHub hesabınızda forkladığınız projeyi açın.
+- Sağ tarafta bulunan **Compare** (Karşılaştır) butonuna tıklayın.
+- Karşımıza çıkan ekranda **Try Switching the Base** linkine tıklayın.
+- Bu linke tıkladıktan sonra proje sahibinin siz projeyi forkladıktan sonra yaptığı değişiklikleri göreceksiniz.
+- Ekranda **Create Pull Request** (Yeni İstek Oluştur) butonuna tıklayın.
+- Bir sonraki ekranda, istek gönderirken **commit** (yorum) yazmak isterseniz buradaki forma yazın
+- **Create Pull Request** butonuna tıklayın.
+- Bir sonraki sayfanın aşağısında **Merge Pull Request** düğmesine tıklayın
+- **Confirm Merge** butonlarına tıklatın!
 
-- Sağ tarafta bulunan **Compare**(Karşılaştır) butonuna tıklayın.
-
-- Karşımıza çıkan ekranda **Try Switching the Base** linkine tıklayın. Bu linke tıkladıktan sonra proje sahibinin siz projeyi forkladıktan sonra yaptığı değişiklikleri göreceksiniz.
-
-- Ekranda **Create Pull Request** (Yeni İstek Oluştur) butonuna tıklayın. Bir sonraki ekranda istek gönderirken **commit**(yorum) yazmak isterseniz buradaki forma yazın ve  **Create Pull Request** butonuna tıklayın.
-
-- Bir sonraki sayfanın aşağısında **Merge Pull Request** ve **Confirm Merge** butonlarına tıkladıktan sonra projeniz güncellenecektir.
+Hepsi bu kadar! Artık, forkladığınız orjinal proje ile sizdeki kopya aynı :)
